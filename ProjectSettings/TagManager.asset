@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Level/Wall
+  - Level/Floor
+  - Level/Room
+  - Level/Door
+  - Level/Decoration
   layers:
   - Default
   - TransparentFX
