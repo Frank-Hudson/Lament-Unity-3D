@@ -1,0 +1,7 @@
+{
+    "title": "Colour Channel",
+    "description": "on of Red, Green or Blue represented as a byte (integer 0-255)",
+    "type": "integer",
+    "minimum": 0,
+    "maximum": 255
+}

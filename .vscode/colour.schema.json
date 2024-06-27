@@ -1,0 +1,42 @@
+{
+    "title": "Colour",
+    "description": "An RGB-space colour, represented as either #hex, [r, g, b] or {r: _, g: _, b: _}",
+    "oneOf": [
+        {
+            "type": "string",
+            "maxLength": 6
+        },
+        {
+            "type": "array",
+            "items": [
+                {
+                    "title": "R",
+                    "$ref": "./colour.channel.schema.json"
+                },
+                {
+                    "title": "G",
+                    "$ref": "./colour.channel.schema.json"
+                },
+                {
+                    "title": "B",
+                    "$ref": "./colour.channel.schema.json"
+                }
+            ]
+        },
+        {
+            "type": "object",
+            "properties": {
+                "r": {
+                    "$ref": "./colour.channel.schema.json"
+                },
+                "g": {
+                    "$ref": "./colour.channel.schema.json"
+                },
+                "b": {
+                    "$ref": "./colour.channel.schema.json"
+                }
+            },
+            "required": ["r", "g", "b"]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+[
+    {
+        "event": "start",
+        "content": [
+            {
+                "text": "*groan*",
+                "style": { "bold": true, "italic": true }
+            },
+            "Ag- My head!",
+            "Where am I?",
+            "Is this... my bedroom?",
+            [
+                "What happened? I don't... I don't remember... \n",
+                { "text": "Anything!", "style": { "italic": true } }
+            ]
+        ]
+    }
+]

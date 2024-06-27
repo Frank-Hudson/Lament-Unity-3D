@@ -9,6 +9,14 @@ TagManager:
   - Level/Room
   - Level/Door
   - Level/Decoration
+  - UI
+  - UI/HUD
+  - UI/HUD/Indicator
+  - UI/HUD/Indicator/Life
+  - UI/Dialogue
+  - Level
+  - Indicator/Life
+  - Entity
   layers:
   - Default
   - TransparentFX
@@ -45,4 +53,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2335908863
+    locked: 0
+  - name: Debug
+    uniqueID: 373981419
     locked: 0

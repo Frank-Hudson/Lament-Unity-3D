@@ -1,0 +1,28 @@
+{
+    "title": "Dialogue Object Part",
+    "description": "A dialogue part in the form of an object, including text and styling",
+    "type": "object",
+    "properties": {
+        "text": {
+            "type": "string"
+        },
+        "style": {
+            "type": "object",
+            "properties": {
+                "bold": {
+                    "type": "boolean"
+                },
+                "italic": {
+                    "type": "boolean"
+                },
+                "underline": {
+                    "type": "boolean"
+                },
+                "colour": {
+                    "$ref": "./colour.schema.json"
+                }
+            }
+        }
+    },
+    "required": ["text"]
+}

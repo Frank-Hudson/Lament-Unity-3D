@@ -1,0 +1,44 @@
+{
+    "title": "Dialogue",
+    "description": "A series of dialogue sections in the game",
+    "$comment": "A 'dialogue section' is a single, uninterrupted series of pages of dialogue, ending when the prompt disappears (though technically, it's the other way around, since the prompt disappears when the last page of the section is continued past",
+    "type": "array",
+    "items": {
+        "title": "Dialogue Section",
+        "description": "A section of dialogue in the game",
+        "type": "object",
+        "properties": {
+            "event": {
+                "description": "The name of the event that triggers this dialogue section",
+                "type": "string"
+            },
+            "content": {
+                "description": "The pages of dialogue text",
+                "type": "array",
+                "items": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "$ref": "./dialogue.object.schema.json"
+                        },
+                        {
+                            "type": "array",
+                            "items": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "$ref": "./dialogue.object.schema.json"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "minItems": 1
+            }
+        },
+        "required": ["event", "content"]
+    }
+}
