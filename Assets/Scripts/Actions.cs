@@ -67,5 +67,5 @@ public class Actions : MonoBehaviour
         List<Roll> rolls;
     }
 
-    public const KeyCode INTERACT = KeyCode.E;
+    public const KeyCode INTERACT_KEY = KeyCode.E;
 }
