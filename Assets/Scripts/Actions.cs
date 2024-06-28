@@ -66,4 +66,6 @@ public class Actions : MonoBehaviour
         SpecialActionTypeValues type;
         List<Roll> rolls;
     }
+
+    public const KeyCode INTERACT = KeyCode.E;
 }
