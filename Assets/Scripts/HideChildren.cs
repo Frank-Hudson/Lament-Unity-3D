@@ -9,4 +9,12 @@ public class HideChildren : MonoBehaviour
             child.gameObject.SetActive(false);
         }
     }
+
+    public void ShowAllChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+    }
 }

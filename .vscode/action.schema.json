@@ -3,6 +3,9 @@
     "description": "An action that can be taken by an entity in the game",
     "type": "object",
     "properties": {
+        "$ref": {
+            "$ref": "./ref.schema.json"
+        },
         "name": {
             "type": "string"
         },

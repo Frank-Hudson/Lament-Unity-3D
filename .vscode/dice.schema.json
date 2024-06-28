@@ -7,12 +7,16 @@
             }
         },
         {
+            "$ref": "./die.schema.json"
+        },
+        {
             "type": "object",
             "properties": {
                 "$ref": {
                     "type": "string"
                 }
-            }
+            },
+            "required": ["$ref"]
         },
         {
             "type": "string"

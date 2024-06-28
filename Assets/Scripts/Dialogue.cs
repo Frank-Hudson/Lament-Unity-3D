@@ -1,6 +1,8 @@
+using Newtonsoft.Json;
+using OneOf;
 using System;
 using System.Collections.Generic;
-using OneOf;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -22,19 +24,33 @@ public class Dialogue : MonoBehaviour
         _hideChildren.HideAllChildren();
         FontColour = _textmesh.color;
         Debug.Log(_storiesAsset.text);
-        _stories = JsonUtility.FromJson<List<Story>>(_storiesAsset.text);
+        _stories = JsonConvert.DeserializeObject<List<Story>>(_storiesAsset.text);
     }
 
     private void Update()
     {
-
+        Story currentStory = _stories.Find(story => story.triggerEvent == Events.GetLatestDialogueEvent().Name);
     }
 
     [Serializable]
     public class Story
     {
-        string triggerEvent;
-        List<OneOf<Content, List<OneOf<Content>>>> content;
+        [JsonProperty("event")]
+        public string triggerEvent;
+        public List<OneOf<Content, List<Content>>> content;
+
+        public bool RunDialogue(Dialogue dialogue)
+        {
+            List<string> dialogueSections = content.Select(section => section.Match(
+                cont => cont.ToString(),
+                contList => string.Join("", contList.Select(cont => cont.ToString()))
+            )).ToList();
+
+            
+
+            dialogue._hideChildren.ShowAllChildren();
+            return true;
+        }
     }
 
     [Serializable]
@@ -44,6 +60,11 @@ public class Dialogue : MonoBehaviour
 
         public static implicit operator Content(string _) => new Content(_);
         public static implicit operator Content(StyledContent _) => new Content(_);
+
+        public override string ToString() => Match<string>(
+                str => str,
+                content => content.ToString()
+        );
     }
 
     [Serializable]

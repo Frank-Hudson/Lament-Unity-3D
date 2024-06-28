@@ -1,0 +1,7 @@
+{
+    "title": "Action Records",
+    "type": "array",
+    "items": {
+        "$ref": "./action.schema.json"
+    }
+}

@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.5764706, g: 0.59607846, b: 0.65882355, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -283,6 +283,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2125628168103450201, guid: 7b4c010b7ebe0284596db182a7092a1a, type: 3}
+      propertyPath: _startPosition.x
+      value: -9.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125628168103450201, guid: 7b4c010b7ebe0284596db182a7092a1a, type: 3}
+      propertyPath: _startPosition.y
+      value: 2.85
+      objectReference: {fileID: 0}
     - target: {fileID: 3382227203095674078, guid: 7b4c010b7ebe0284596db182a7092a1a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1435,7 +1443,7 @@ Transform:
   - {fileID: 452552832}
   - {fileID: 585489503}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1062063622
 GameObject:
@@ -2074,6 +2082,78 @@ Transform:
   m_Father: {fileID: 948782948}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1806032375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1806032376}
+  - component: {fileID: 1806032379}
+  - component: {fileID: 1806032377}
+  - component: {fileID: 1806032378}
+  m_Layer: 0
+  m_Name: assets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1806032376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806032375}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1806032377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806032375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b77d4f20df76b22478f149d9c96bb59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemsAsset: {fileID: 4900000, guid: cf7a3ddcf2a088947939d81d55d881d9, type: 3}
+--- !u!114 &1806032378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806032375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82228a5d1e8003e42ac155d8111fa17f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textAssets: []
+--- !u!114 &1806032379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806032375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf905f6b0bdce048a2962567fbbd5ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actionsAsset: {fileID: 4900000, guid: 204ec16d786594542b9db403202a6680, type: 3}
 --- !u!1 &2003921826
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,7 +2300,7 @@ Transform:
   m_Children:
   - {fileID: 6394100343989236092}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6394100343293583405
 GameObject:

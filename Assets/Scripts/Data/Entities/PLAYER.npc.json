@@ -3,7 +3,9 @@
     "health": 10,
     "speed": 25,
     "actions": [
-        "./attack.unarmed.action.json",
+        {
+            "$ref": "Unarmed Strike"
+        },
         {
             "name": "Absorb",
             "time": {

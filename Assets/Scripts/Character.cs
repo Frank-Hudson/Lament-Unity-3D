@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 using UnityEngine;
 
 [Serializable]
@@ -10,6 +11,6 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
-        _characterData = JsonUtility.FromJson<CharacterData>(_characterAsset.text);
+        _characterData = JsonConvert.DeserializeObject<CharacterData>(_characterAsset.text);
     }
 }

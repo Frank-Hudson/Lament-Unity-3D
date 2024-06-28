@@ -1,5 +1,53 @@
 [
     {
+        "name": "Dagger",
+        "data": {
+            "actions": [
+                {
+                    "name": "Stab!",
+                    "type": "attack",
+                    "time": {
+                        "amount": 1,
+                        "period": "action"
+                    },
+                    "rolls": [
+                        {
+                            "dice": {
+                                "count": 2,
+                                "sides": 4
+                            },
+                            "damage": {
+                                "amount": 0,
+                                "type": "piercing"
+                            },
+                            "ability": "STR"
+                        }
+                    ]
+                },
+                {
+                    "name": "Swipe!",
+                    "type": "attack",
+                    "time": {
+                        "amount": 1,
+                        "period": "action"
+                    },
+                    "rolls": [
+                        {
+                            "dice": {
+                                "count": 2,
+                                "sides": 4
+                            },
+                            "damage": {
+                                "amount": 2,
+                                "type": "slashing"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
         "name": "Shotgun",
         "data": {
             "weightKgs": 3.6,

@@ -1,5 +1,7 @@
 using System;
 
+/// DEPRECATED!
+///
 /// Optional wrapper type (interface union).
 public abstract class Option<T>
 {

@@ -1,0 +1,5 @@
+{
+    "title": "Reference",
+    "description": "A reference to another instance",
+    "type": "string"
+}

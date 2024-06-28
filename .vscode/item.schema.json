@@ -10,7 +10,7 @@
             "description": "Item override",
             "properties": {
                 "$ref": {
-                    "type": "string"
+                    "$ref": "./ref.schema.json"
                 },
                 "name": {
                     "type": "string"

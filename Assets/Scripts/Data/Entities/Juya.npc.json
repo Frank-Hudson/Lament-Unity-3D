@@ -4,7 +4,7 @@
     "speed": 35,
     "inventory": [
         {
-            "$ref": "items.Shotgun"
+            "$ref": "Shotgun"
         }
     ]
 }

@@ -1,18 +1,21 @@
+using Newtonsoft.Json;
 using OneOf;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Actions : MonoBehaviour
+public class ActionAssets : MonoBehaviour
 {
     [SerializeField] private TextAsset _actionsAsset;
 
     private List<Action> _actions;
-    public List<Action> ActionsList { get => _actions; }
+    public List<Action> Actions { get => _actions; }
+
+    public Action FindAction(string name) => _actions.Find(x => x.name == name);
 
     private void Awake()
     {
-        _actions = JsonUtility.FromJson<List<Action>>(_actionsAsset.text);
+        _actions = JsonConvert.DeserializeObject<List<Action>>(_actionsAsset.text);
     }
 
     [Serializable]
