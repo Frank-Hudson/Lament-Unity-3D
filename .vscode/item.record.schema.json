@@ -1,0 +1,7 @@
+{
+    "title": "Item Records",
+    "type": "array",
+    "items": {
+        "$ref": "./item.schema.json"
+    }
+}

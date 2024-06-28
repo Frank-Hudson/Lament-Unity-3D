@@ -14,5 +14,12 @@
                 { "text": "Anything!", "style": { "italic": true } }
             ]
         ]
+    },
+    {
+        "event": "playersees:blob-1",
+        "content": [
+            { "text": "Le Gasp!", "style": { "italic": true } },
+            "Is that a... a... I don't know what the hell it is, but it sure doesn't look friendly!"
+        ]
     }
 ]

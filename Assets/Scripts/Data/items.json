@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Shotgun",
+        "data": {
+            "weightKgs": 3.6,
+            "rarity": "uncommon",
+            "type": "weapon",
+            "actions": [
+                {
+                    "name": "Fire"
+                }
+            ]
+        }
+    }
+]

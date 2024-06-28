@@ -2235,6 +2235,8 @@ GameObject:
   - component: {fileID: 6394100343293583415}
   - component: {fileID: 6394100343293583402}
   - component: {fileID: 6394100343293583401}
+  - component: {fileID: 6394100343293583408}
+  - component: {fileID: 6394100343293583407}
   - component: {fileID: 6394100343293583406}
   m_Layer: 0
   m_Name: entity
@@ -2255,6 +2257,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8cf8f315d0a875469d7ec8df86ce940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 0
+  _movementsPath:
+  - {x: 0, y: 0, z: -10}
+  - {x: 0, y: 0, z: -10}
+  - {x: 0, y: 0, z: -15}
+  - {x: 0, y: 0, z: -5}
+--- !u!114 &6394100343293583407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394100343293583405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e37ada1264edf47a04d073e5c3772c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6394100343293583408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394100343293583405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c2918623e6ac148a5cb00072328661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterAsset: {fileID: 4900000, guid: 91527c7c23db73348ac9e25ebd07a6a5, type: 3}
+  _characterData:
+    name: 
+    health: 0
+    speed: 0
+    age: 0
+    gender: 
+    inventory:
+      items: []
 --- !u!23 &6394100343293583415
 MeshRenderer:
   m_ObjectHideFlags: 0

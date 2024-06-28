@@ -1,0 +1,23 @@
+{
+    "name": "PLAYER",
+    "health": 10,
+    "speed": 25,
+    "actions": [
+        "./attack.unarmed.action.json",
+        {
+            "name": "Absorb",
+            "time": {
+                "amount": 1,
+                "period": "action"
+            },
+            "type": "attack",
+            "saves": [
+                {
+                    "dice": {
+                        "$ref": "1d20"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -6,10 +6,41 @@
         "name": {
             "type": "string"
         },
+        "health": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000
+        },
+        "speed": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+        },
         "age": {
             "type": "integer",
             "minimum": 0,
             "maximum": 1000
+        },
+        "gender": {
+            "oneOf": [
+                { "type": "string" },
+                { "enum": ["pnts", "o", "nb", "f", "m"] }
+            ]
+        },
+        "actions": {
+            "oneOf": [
+                { "type": "string" },
+                {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            { "type": "string" },
+                            { "$ref": "./action.schema.json" }
+                        ]
+                    }
+                },
+                { "$ref": "./action.schema.json" }
+            ]
         },
         "inventory": {
             "type": "array",
@@ -18,5 +49,5 @@
             }
         }
     },
-    "required": ["name"]
+    "required": ["name", "health", "speed"]
 }

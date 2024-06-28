@@ -1,0 +1,29 @@
+{
+    "title": "Item Data",
+    "type": "object",
+    "properties": {
+        "weightKgs": {
+            "type": "number",
+            "minimum": 0
+        },
+        "rarity": {
+            "enum": [
+                "common",
+                "uncommon",
+                "rare",
+                "epic",
+                "legendary",
+                "artefact"
+            ]
+        },
+        "type": {
+            "enum": ["weapon", "tool", "misc"]
+        },
+        "actions": {
+            "type": "array",
+            "items": {
+                "$ref": "./action.schema.json"
+            }
+        }
+    }
+}

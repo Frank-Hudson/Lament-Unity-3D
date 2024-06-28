@@ -1,0 +1,13 @@
+{
+    "enum": [
+        "acid",
+        "bludeoning",
+        "cold",
+        "fire",
+        "necrotic",
+        "piercing",
+        "radiant",
+        "slashing",
+        "thunder"
+    ]
+}

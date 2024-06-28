@@ -1,0 +1,21 @@
+{
+    "oneOf": [
+        {
+            "type": "array",
+            "items": {
+                "$ref": "./die.schema.json"
+            }
+        },
+        {
+            "type": "object",
+            "properties": {
+                "$ref": {
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

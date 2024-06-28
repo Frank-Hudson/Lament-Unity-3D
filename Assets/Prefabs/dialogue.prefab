@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _storiesAsset: {fileID: 4900000, guid: ae28d4a32cd9dc84eb225fdc9b795c58, type: 3}
+  _dialogueBackground: {fileID: 4731742190139706430}
+  _textmesh: {fileID: 4731742190712219144}
 --- !u!1 &4731742190139706433
 GameObject:
   m_ObjectHideFlags: 0

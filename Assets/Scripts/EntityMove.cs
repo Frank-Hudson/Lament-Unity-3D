@@ -1,25 +1,41 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using OneOf;
 using UnityEngine;
 
 public class EntityMove : MonoBehaviour
 {
-    [SerializeField] private List<OneOf<Movement, Vector3>> _movementsPath;
+    [SerializeField] private float _speed;
+    [SerializeField] private Events.GameEvent _trigger;
+    [SerializeField] private List<Vector3> _movementsPath;
 
-    public struct Movement
+    private EntityData _entityData;
+
+    private void Awake()
     {
-        public Axis axis;
-        public float distance;
-
-        public static implicit operator Vector3(Movement _) => _.axis switch
-        {
-            Axis.X => new Vector3(_.distance, 0, 0),
-            Axis.Y => new Vector3(0, _.distance, 0),
-            Axis.Z => new Vector3(0, 0, _.distance),
-            _ => throw new InvalidEnumArgumentException("The Axis enum can only be X, Y, or Z"),
-        };
+        _entityData = GetComponent<EntityData>();
+        _speed = _entityData.Character.CharacterData.speed;
     }
 
-    public enum Axis { X, Y, Z }
+    private void Update()
+    {
+        if (Events.GetLatestGameEvent() == _trigger)
+        {
+            foreach (Vector3 movement in _movementsPath)
+            {
+                Delay(3, () => transform.Translate(movement * _speed * Time.deltaTime));
+            }
+        }
+    }
+
+    private void Delay(int seconds, Action action)
+    {
+        StartCoroutine(SleepForSecondsThenDo(seconds, action));
+    }
+
+    private IEnumerator SleepForSecondsThenDo(int seconds, Action thenDo)
+    {
+        yield return new WaitForSeconds(seconds);
+        thenDo();
+    }
 }

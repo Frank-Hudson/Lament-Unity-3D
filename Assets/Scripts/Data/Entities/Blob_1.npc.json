@@ -1,0 +1,7 @@
+{
+    "name": "Blob 1",
+    "health": 8,
+    "speed": 10,
+    "gender": "amorphous blob",
+    "actions": "./blob.actions.json"
+}

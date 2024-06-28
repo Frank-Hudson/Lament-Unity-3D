@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
 
 public class Events : MonoBehaviour
@@ -17,7 +19,11 @@ public class Events : MonoBehaviour
     public class GameEvent : Event
     {
         public static readonly List<GameEvent> Events = new List<GameEvent>()
-        { };
+        {
+            new GameEvent("blob1-move"),
+        };
+
+        public static GameEvent FindEvent(string name) => Events.Find(ev => ev.Name == name);
 
         public GameEvent(string name) : base(name)
         { }
@@ -30,6 +36,8 @@ public class Events : MonoBehaviour
             new DialogueEvent("start", Option<DialogueEvent>.None()),
         };
 
+        public static DialogueEvent FindEvent(string name) => Events.Find(ev => ev.Name == name);
+
         private readonly Option<DialogueEvent> parent;
         public Option<DialogueEvent> Parent { get => parent; }
 
@@ -39,12 +47,12 @@ public class Events : MonoBehaviour
         }
     }
 
-    private static Event latestEvent;
-    public Event GetLatestEvent { get => latestEvent; }
+    private static Event _latestEvent;
+    public static Event GetLatestEvent() => _latestEvent;
 
-    private static GameEvent latestGameEvent;
-    public Event GetLatestGameEvent { get => latestGameEvent; }
+    private static GameEvent _latestGameEvent;
+    public static GameEvent GetLatestGameEvent() => _latestGameEvent;
 
-    private static DialogueEvent latestDialogueEvent;
-    public Event GetLatestDialogueEvent { get => latestDialogueEvent; }
+    private static DialogueEvent _latestDialogueEvent;
+    public static DialogueEvent GetLatestDialogueEvent() => _latestDialogueEvent;
 }

@@ -9,10 +9,10 @@ public class Dialogue : MonoBehaviour
     static Color FontColour;
 
     [SerializeField] private TextAsset _storiesAsset;
+    [SerializeField] private RectTransform _dialogueBackground;
+    [SerializeField] private TextMeshProUGUI _textmesh;
 
     private HideChildren _hideChildren;
-    private RectTransform _dialogueBackground;
-    private TextMeshProUGUI _textmesh;
 
     private List<Story> _stories;
 
@@ -20,8 +20,6 @@ public class Dialogue : MonoBehaviour
     {
         _hideChildren = GetComponent<HideChildren>();
         _hideChildren.HideAllChildren();
-        _dialogueBackground = GetComponentInChildren<RectTransform>();
-        _textmesh = _dialogueBackground.GetComponentInChildren<TextMeshProUGUI>();
         FontColour = _textmesh.color;
         Debug.Log(_storiesAsset.text);
         _stories = JsonUtility.FromJson<List<Story>>(_storiesAsset.text);
@@ -29,15 +27,17 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
-        
+
     }
 
+    [Serializable]
     public class Story
     {
         string triggerEvent;
         List<OneOf<Content, List<OneOf<Content>>>> content;
     }
 
+    [Serializable]
     public class Content : OneOfBase<string, StyledContent>
     {
         public Content(OneOf<string, StyledContent> _) : base(_) { }
@@ -46,6 +46,7 @@ public class Dialogue : MonoBehaviour
         public static implicit operator Content(StyledContent _) => new Content(_);
     }
 
+    [Serializable]
     public struct StyledContent
     {
         public string text;
@@ -59,6 +60,7 @@ public class Dialogue : MonoBehaviour
 
         public override readonly string ToString() => $"{style:text}";
 
+        [Serializable]
         public struct Style
         {
             public bool bold;

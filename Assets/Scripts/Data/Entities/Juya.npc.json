@@ -1,0 +1,10 @@
+{
+    "name": "Juya",
+    "health": 34,
+    "speed": 35,
+    "inventory": [
+        {
+            "$ref": "items.Shotgun"
+        }
+    ]
+}

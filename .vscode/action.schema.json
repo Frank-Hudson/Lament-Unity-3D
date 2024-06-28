@@ -1,0 +1,106 @@
+{
+    "title": "Actions",
+    "description": "An action that can be taken by an entity in the game",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "time": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "default": 1
+                },
+                "period": {
+                    "enum": [
+                        "action",
+                        "bonus_action",
+                        "reaction",
+                        "minutes",
+                        "hours",
+                        "days"
+                    ],
+                    "default": "action"
+                }
+            }
+        },
+        "type": {
+            "enum": [
+                "attack",
+                "dash",
+                "disengage",
+                "dodge",
+                "help",
+                "hide",
+                "ready",
+                "search",
+                "useobject"
+            ],
+            "default": "attack"
+        }
+    },
+    "oneOf": [
+        {
+            "if": {
+                "properties": {
+                    "type": {
+                        "const": "attack"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "saves": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "dice": {
+                                    "$ref": "./dice.schema.json"
+                                },
+                                "ability": {
+                                    "$ref": "./ability.score.schema.json"
+                                }
+                            }
+                        }
+                    },
+                    "rolls": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "damage": {
+                                    "type": "object",
+                                    "properties": {
+                                        "amount": {
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "type": {
+                                            "$ref": "./damagetype.schema.json"
+                                        }
+                                    }
+                                },
+                                "ability": {
+                                    "$ref": "./ability.score.schema.json"
+                                }
+                            },
+                            "oneOf": [
+                                {
+                                    "properties": {
+                                        "dice": {
+                                            "$ref": "./dice.schema.json"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

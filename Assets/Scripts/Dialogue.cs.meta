@@ -3,7 +3,10 @@ guid: 83052a1b80cf1074e9f3715fe4a335e3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _storiesAsset: {fileID: 4900000, guid: ae28d4a32cd9dc84eb225fdc9b795c58, type: 3}
+  - _dialogueBackground: {instanceID: 0}
+  - _textmesh: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

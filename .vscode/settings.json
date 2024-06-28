@@ -55,12 +55,32 @@
     "dotnet.preferCSharpExtension": true,
     "json.schemas": [
         {
-            "fileMatch": ["/Assets/Scripts/Story/*.schema.json"],
-            "url": "http://json-schema.org/draft-07/schema#"
+            "fileMatch": ["*.schema.json"],
+            "url": "http://json-schema.org/draft-07/schema"
+        },
+        {
+            "fileMatch": ["*die.json"],
+            "url": "/.vscode/die.schema.json"
         },
         {
             "fileMatch": ["*npc.json"],
             "url": "/.vscode/npc.schema.json"
+        },
+        {
+            "fileMatch": ["*item.json"],
+            "url": "/.vscode/item.schema.json"
+        },
+        {
+            "fileMatch": ["*items.json"],
+            "url": "/.vscode/item.record.schema.json"
+        },
+        {
+            "fileMatch": ["*action.json"],
+            "url": "/.vscode/action.schema.json"
+        },
+        {
+            "fileMatch": ["*actions.json"],
+            "url": "/.vscode/action.record.schema.json"
         },
         {
             "fileMatch": ["*story.json", "*stories.json"],
